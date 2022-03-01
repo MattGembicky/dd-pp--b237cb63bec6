@@ -1,0 +1,45 @@
+.Wrapper{
+  display: inline-block;
+  width: 20vw;
+  min-width: 10em;
+  min-height: 4em;
+  background-color: var(--box);
+  border-radius: 1em;
+  margin: 1em;
+  padding: 15px;
+  font-size: 1.5em;
+}
+
+.Name{
+  text-align: left;
+  float: left;
+  font-weight: bold;
+}
+
+.Cost{
+  float: right;
+}
+
+.NumberBox{
+  text-align: center;
+  margin-top: 2em;
+}
+
+.Number{
+  min-width: 2em;
+  display: inline-block;
+  font-size: 1em;
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+
+.Button{
+  width: 1.5em;
+  height: 1.5em;
+  background-color: var(--icon);
+  color: var(--box);
+  border-radius: 6px;
+  padding: 0;
+  font-size: 1em;
+  cursor: pointer;
+}

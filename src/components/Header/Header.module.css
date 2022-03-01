@@ -1,0 +1,25 @@
+.Wrapper{
+  width: 100%;
+  background-color: var(--box);
+  margin-bottom: 0.6em;
+}
+
+h1{
+  padding: 0;
+  margin: 15px;
+  display: inline-block;
+  font-size: 1em;
+}
+
+.Button{
+  display: inline-block;
+  float: right;
+}
+
+.Cart{
+  margin-right: 15px;
+  height: 3em;
+  width: 3em;
+  cursor: pointer;
+  fill: var(--icon);
+}
