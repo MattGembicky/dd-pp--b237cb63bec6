@@ -5,7 +5,7 @@ import itemStyles from './Item.module.css';
 import { useCookies } from 'react-cookie';
 
 
-const Item = ({ item, dispatch}) => {
+const Item = ({ item, dispatch }) => {
   const [amount, setAmount] = useState(0);
   const [cookies, setCookie] = useCookies(['cart']);
 
@@ -14,14 +14,16 @@ const Item = ({ item, dispatch}) => {
       return item.id === cookieItem.id;
     }
 
-    let temp = cookies.cart;
-    const index = temp.findIndex(sameId);
+    if(cookies.cart !== undefined){
+      let temp = cookies.cart;
+      const index = temp.findIndex(sameId);
 
-    if(index === -1){
-      setAmount(0);
-    }else{
-      dispatch({type: "update", item: item, amount: temp[index].amount});
-      setAmount(temp[index].amount)
+      if(index === -1){
+        setAmount(0);
+      }else{
+        dispatch({type: "update", item: item, amount: temp[index].amount});
+        setAmount(temp[index].amount)
+      }
     }
   }, [dispatch, cookies, item]);
 
