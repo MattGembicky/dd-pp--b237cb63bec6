@@ -9,6 +9,8 @@ const Item = ({ item, dispatch }) => {
   const [amount, setAmount] = useState(0);
   const [cookies, setCookie] = useCookies(['cart']);
 
+  let createCart = () => {setCookie('cart', [], { maxAge: 86400 })};
+
   useEffect(() => {
     function sameId(cookieItem) {
       return item.id === cookieItem.id;
@@ -24,12 +26,18 @@ const Item = ({ item, dispatch }) => {
         dispatch({type: "update", item: item, amount: temp[index].amount});
         setAmount(temp[index].amount)
       }
+    }else{
+      createCart();
     }
   }, [dispatch, cookies, item]);
 
   function cookieEditAmount(id, amount){
     function sameId(cookieItem) {
       return id === cookieItem.id;
+    }
+
+    if(cookies.cart !== undefined){
+      createCart();
     }
 
     let temp = cookies.cart;
