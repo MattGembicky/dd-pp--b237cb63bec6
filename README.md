@@ -4,7 +4,7 @@
 
 
 
-FIXES
+### FIXES
 Problém byl s neexistencí cookies.
 
 Nejprve jsem ošetřil load dat z cookies.
